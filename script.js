@@ -66,6 +66,25 @@ const winner = function() {
   triumphNoise.play();
 };
 
+const whoFlys = function() {
+  if (currentPlayer === players[0]) {
+    eagleImg.classList.remove("fly");
+    owlImg.classList.add("fly");
+  } else {
+    owlImg.classList.remove("fly");
+    eagleImg.classList.add("fly");
+  }
+};
+
+const switchPlayer = function() {
+  currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
+  turnSign.textContent = `${currentPlayer}'s turn`;
+}
+
+const resetCurrentScore = function() {
+  currentCount = 0;
+  currentScore.textContent = currentCount;
+};
 
 
 
@@ -121,11 +140,9 @@ rollButton.addEventListener("click", function() {
   diceImg.src = `${number}.png`;
 
   if (number == 1) {
-    currentCount = 0;
-    currentScore.textContent = "0";
+    resetCurrentScore();
     fartNoise.play();
-    currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
-    turnSign.textContent = `${currentPlayer}'s turn`;
+    switchPlayer();
     saveButton.disabled = true;
 
   } else {
@@ -134,13 +151,7 @@ rollButton.addEventListener("click", function() {
     saveButton.disabled = false;
   }
 
-  if (currentPlayer === players[0]) {
-    eagleImg.classList.remove("fly");
-    owlImg.classList.add("fly");
-  } else {
-    owlImg.classList.remove("fly");
-    eagleImg.classList.add("fly");
-  }
+  whoFlys();
 
 });
 
@@ -158,8 +169,7 @@ saveButton.addEventListener("click", function() {
     } else {
       owlNoise.play();
       owlImg.style.marginTop = `${100-owlCount}px`;
-      currentPlayer = players[1];
-      turnSign.textContent = `${currentPlayer}'s turn`;
+      switchPlayer();
     }
 
   } else {
@@ -170,21 +180,13 @@ saveButton.addEventListener("click", function() {
       winner();
     } else {
       eagleNoise.play();
-      currentPlayer = players[0];
-      turnSign.textContent = `${currentPlayer}'s turn`;
       eagleImg.style.marginTop = `${100-eagleCount}px`;
+      switchPlayer();
     }
   }
 
-  if (currentPlayer === players[0]) {
-    eagleImg.classList.remove("fly");
-    owlImg.classList.add("fly");
-  } else {
-    owlImg.classList.remove("fly");
-    eagleImg.classList.add("fly");
-  }
-
-  currentCount = 0;
-  currentScore.textContent = `${currentCount}`;
+  whoFlys();
+  resetCurrentScore();
   saveButton.disabled = true;
 });
+
