@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Vs Eagle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <main>
+      <div class="header">
+        <img src="Owl.png" height="100px">
+        <h1>vs</h1>
+        <img src="Eagle.png" height="100px">
+      </div>
+      <h4>Roll the dice until you choose to save your score to your total.
+      If you roll a 1, you lose your current score. Reach 100 points to win.</h4>
+      <h2></h2>
+
+      <div class="grid">
+        <div class="two-paths">
+          <div class="gap"></div>
+
+          <div class="owl-path">
+            <h3 class="total-score" id="owl-total">0</h3>
+            <img src="Owl.png" class="owl-game-image" height="60px">
+          </div>
+
+          <div class="gap"></div>
+
+          <div class="eagle-path">
+            <h3 class="total-score" id="eagle-total">0</h3>
+            <img src="Eagle.png" class="eagle-game-image" height="60px">
+          </div>
+
+          <div class="gap"></div>
+        </div>
+
+        <img id="dice-image" src="1.png" height="40px">
+        <div class="game-controls">
+          <button class="choice-button" id="save-button">Save</button>
+          <h3 id="current-score">0</h3>
+          <button class="choice-button" id="roll-button">Roll</button>
+        </div>
+      </div>
+
+      <button class="button start-button">Start</button>
+      <button class="button reset-button">Reset</button>
+    </main>
+
+    <script src="script.js"></script>
+    <audio loop="false" volume="100">
+      <source src="Triumph.mp3" type="audio/wav">
+      <source src="Fart.mp3" type="audio/wav">
+      <source src="Owl.mp3" type="audio/wav">
+      <source src="Eagle.mp3" type="audio/wav">
+    </audio>
+  </body>
+</html>

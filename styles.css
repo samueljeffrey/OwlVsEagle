@@ -1,0 +1,195 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to right, #ff4800, #ffdd00);
+  text-align: center;
+}
+
+main {
+  border-radius: 25px;
+  max-width: 320px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HEADER */
+
+h4 {
+  padding: 0 20px;
+  height: 80px;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+h2 {
+  height: 60px;
+  padding: 0 20px;
+  margin: 20px 0 0;
+}
+
+.header {
+  width: 240px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  align-content: space-around;
+}
+
+/* GAME */
+
+.grid {
+  width: 270px;
+  height: 270px;
+  display: grid;
+  margin: 20px auto;
+}
+
+.two-paths {
+  display: grid;
+  grid-template-columns: 40px 60px 70px 60px 40px;
+  align-content: space-around;
+  width: 270px;
+  height: 200px;
+  padding: 0;
+}
+
+.owl-path {
+  height: 200px;
+  width: 60px;
+}
+
+.eagle-path {
+  height: 200px;
+  width: 60px;
+}
+
+.owl-game-image {
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+}
+
+.eagle-game-image {
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+}
+
+#dice-image {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.total-score {
+  font-size: 2rem;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+}
+
+.game-controls {
+  display: flex;
+  margin: 0 auto;
+  height: 30px;
+}
+
+.choice-button {
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  height: 30px;
+  text-decoration: none;
+  width: 80px;
+  margin: 0;
+  outline: none;
+}
+
+.choice-button:hover {
+  cursor: pointer;
+}
+
+#save-button {
+  background-color: #1964fa;
+}
+
+#save-button:active {
+  background-color: #0046d1;
+}
+
+#roll-button {
+  background-color: #ff1b17;
+}
+
+#roll-button:active {
+  background-color: #d40400;
+}
+
+#current-score {
+  width: 40px;
+  margin: auto 10px;
+}
+
+
+
+/* BUTTONS */
+
+.button {
+  -webkit-border-radius: 20;
+  -moz-border-radius: 20;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin: 10px;
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.start-button {
+  background: #ff4800;
+}
+
+.reset-button {
+  background: #ffdd00;
+}
+
+.button-disabled {
+  background: #bfbfbf;
+}
+
+
+
+/* ANIMATION */
+
+.fly {
+  animation: fly 0.5s infinite;
+}
+
+@-moz-keyframes fly {
+    0% { -moz-transform: rotate(-5deg); }
+    50% { -moz-transform: rotate(5deg); }
+    100% { -moz-transform: rotate(-5deg); }
+}
+@-webkit-keyframes fly {
+    0% { -webkit-transform: rotate(-5deg); }
+    50% { -webkit-transform: rotate(5deg); }
+    100% { -webkit-transform: rotate(-5deg); }
+}
+@keyframes fly {
+    0% {transform:rotate(-5deg);}
+    50% {transform:rotate(5deg);}
+    100% {transform:rotate(-5deg);}
+}
