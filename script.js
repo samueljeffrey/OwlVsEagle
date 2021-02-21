@@ -45,12 +45,8 @@ const original = function() {
   turnSign.classList.add("hidden");
   instructions.classList.remove("hidden");
   playCount = 0;
-  owlCount = 0;
-  eagleCount = 0;
   diceImg.classList.add("hidden");
-  rollButton.classList.add("hidden");
-  saveButton.classList.add("hidden");
-  currentScore.classList.add("hidden");
+  hideGameControls();
   owlTotal.classList.add("hidden");
   eagleTotal.classList.add("hidden");
   eagleImg.style.marginTop = "80px";
@@ -64,6 +60,7 @@ const winner = function() {
   body.style.background = "linear-gradient(to right, #00d150, #a2ff30)";
   turnSign.textContent = `${currentPlayer} wins!`;
   triumphNoise.play();
+  hideGameControls();
 };
 
 const whoFlys = function() {
@@ -84,6 +81,12 @@ const switchPlayer = function() {
 const resetCurrentScore = function() {
   currentCount = 0;
   currentScore.textContent = currentCount;
+};
+
+const hideGameControls = function() {
+  rollButton.classList.add("hidden");
+  saveButton.classList.add("hidden");
+  currentScore.classList.add("hidden");
 };
 
 
@@ -189,4 +192,3 @@ saveButton.addEventListener("click", function() {
   resetCurrentScore();
   saveButton.disabled = true;
 });
-
